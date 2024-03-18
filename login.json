@@ -1,0 +1,17 @@
+{
+    "title": "NAtIVe254 - Login",
+    "fields": [
+        {
+            "name": "email",
+            "placeholder": "Email",
+            "required": true
+        },
+        {
+            "name": "password",
+            "placeholder": "Password",
+            "required": true
+        }
+    ],
+    "button_text": "Login",
+    "signup_link": "/signup"
+}

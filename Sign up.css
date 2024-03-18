@@ -1,0 +1,51 @@
+/* login.css */
+h4 {
+    background-color: black;
+    color: white; /* Ensures text is visible on the dark background */
+    padding: 10px; /* Optional: Add some padding for better readability */
+}
+body {
+    background-color: lightpink;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 0px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+input[type="password"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+input[type="username"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+
+.signup-link {
+    text-align: left;
+    margin-top: 20px;
+}

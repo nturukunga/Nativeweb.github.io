@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAtIVe25FOuR - Login</title>
+    <link rel="stylesheet" href="Sign up.css">
+</head>
+<body>
+    <h4>NAtIVe 254</h4>
+    <div class="container">
+        <h2>sign up</h2>
+        <form action="/Sign up" method="post" onsubmit="return validateFormAndRedirect()">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password"
+            autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,}" title="Must contain at least one number, one uppercase and lowercase letter, one symbol, and at least 6 or more characters" required>
+            <input type="Username" name="display name" placeholder="Username"required>
+            <br>
+            <button type="submit">Sign up</button>
+            <button type="/sign up">Sign up with Google</button>
+        </form>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
