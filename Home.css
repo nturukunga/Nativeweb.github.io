@@ -1,0 +1,81 @@
+h4 {
+    background-color: black;
+    color: white; /* Ensures text is visible on the dark background */
+    padding: 10px; /* Optional: Add some padding for better readability */
+}
+body {
+    background-color: lightpink;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box {
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px; /* Adjust the space between boxes */
+}
+
+.box:hover {
+    background-color: black;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 35px;
+    margin: 95px; /* Adjust the space between buttons */
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.paragraph {
+    text-align: justify; /* Justify the text */
+    font-weight: bold; /* Make the text bold */
+    width: 50%; /* Set the width to control the centering */
+    margin: 0 auto; /* Center the paragraph horizontally */
+}
+
+.initials {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: lightpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    display: none;
+    background-color: lightpink;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.dropdown-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+}

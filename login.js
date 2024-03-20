@@ -1,57 +1,58 @@
-// signup.js
+// login.js
 
-// JSON data (you can replace this with your actual data)
-const signupData = {
-    "title": "NAtIVe25FOuR - Sign Up",
-    "fields": [
-        {
-            "name": "email",
-            "placeholder": "Email",
-            "required": true
-        },
-        {
-            "name": "password",
-            "placeholder": "Password",
-            "required": true
-        },
-        {
-            "name": "display name",
-            "placeholder": "Username",
-            "required": true
-        }
-    ],
-    "button_text": "Sign up",
-    "google_signup_link": "/signup"
-};
+// Dummy user data (replace this with your actual user data or backend logic)
+const userData = [
+    {
+        email: "user1@example.com",
+        password: "password1"
+    },
+    {
+        email: "user2@example.com",
+        password: "password2"
+    }
+    // Add more user data as needed
+];
 
-// Populate form fields
-document.querySelector('input[name="email"]').placeholder = signupData.fields[0].placeholder;
-document.querySelector('input[name="password"]').placeholder = signupData.fields[1].placeholder;
-document.querySelector('input[name="display name"]').placeholder = signupData.fields[2].placeholder;
-document.querySelector('button[type="submit"]').textContent = signupData.button_text;
-document.querySelector('button[type="/sign up"]').textContent = "Sign up with Google";
+// Populate form fields with predefined data
+document.querySelector('input[name="email"]').placeholder = "Email";
+document.querySelector('input[name="password"]').placeholder = "Password";
 
-// Form validation function
+/**
+ * Validates a login form.
+ * 
+ * @returns {boolean} True if the form validation passes and a user is found, false otherwise.
+ */
 function validateForm() {
-    const email = document.querySelector('input[name="email"]').value;
-    const password = document.querySelector('input[name="password"]').value;
+    const emailInput = document.querySelector('input[name="email"]');
+    const passwordInput = document.querySelector('input[name="password"]');
+    const email = emailInput.value;
+    const password = passwordInput.value;
 
-    // Basic email validation (you can enhance this as needed)
+    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert('Please enter a valid email address.');
         return false;
     }
 
-    // Password length validation (you can customize this)
+    // Password length validation
     if (password.length < 6) {
         alert('Password must be at least 6 characters long.');
         return false;
     }
 
-    
-
-    // Redirect to signup page (you can implement this based on your backend logic)
-    // Example: window.location.href = '/signup';
-    return true;
+    // If form validation passes, proceed with login
+    const user = userData.find(user => user.email === email && user.password === password);
+    if (user) {
+        alert("Login successful!"); // You can redirect to a dashboard page or perform other actions here
+        return true;
+    } else {
+        // If user is not found, prompt them to sign up
+        const confirmSignUp = confirm("You don't have an account. Would you like to sign up?");
+        if (confirmSignUp) {
+            // Redirect the user to the signup page
+            window.location.href = "Signup.html"; // Replace "Signup.html" with the actual URL of your signup page
+            return false; // Prevent form submission
+        }
+    }
 }

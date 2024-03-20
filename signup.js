@@ -1,9 +1,7 @@
-
 // signup.js
 
 // JSON data (you can replace this with your actual data)
 const signupData = {
-    "title": "NAtIVe25FOuR - Sign Up",
     "fields": [
         {
             "name": "email",
@@ -30,10 +28,10 @@ document.querySelector('input[name="email"]').placeholder = signupData.fields[0]
 document.querySelector('input[name="password"]').placeholder = signupData.fields[1].placeholder;
 document.querySelector('input[name="display name"]').placeholder = signupData.fields[2].placeholder;
 document.querySelector('button[type="submit"]').textContent = signupData.button_text;
-document.querySelector('button[type="/sign up"]').textContent = "Sign up with Google";
+document.querySelector('button[type="button"]').textContent = "Sign up with Google";
 
 // Form validation function
-function validateForm() {
+function validateFormAndRedirect() {
     const email = document.querySelector('input[name="email"]').value;
     const password = document.querySelector('input[name="password"]').value;
 
@@ -50,38 +48,49 @@ function validateForm() {
         return false;
     }
 
-    const express = require('express');
-const app = express();
-app.use(express.json());
+    // If form validation passes, you can redirect to another page
+    // Example: window.location.href = '/home';
+    redirectToHomePage();
 
-app.post('/signup', (req, res) => {
-    const password = req.body.password;
-    const passwordRegex = new RegExp('(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\\W).{6,}');
+    // Prevent form submission
+    return false;
+}
 
-    if (passwordRegex.test(password)) {
-        // Password is valid, continue with signup process
+// Redirect to Home Page on successful signup
+function redirectToHomePage() {
+    window.location.href = "Home.html"; // Replace "/home" with the URL of your home page
+}
+// Handle form submission and server response
+function handleSignupResponse(response) {
+    if (response.ok) {
+        // Sign-up successful, redirect to home page or display success message
+        alert('Sign-up successful!');
+        window.location.href = '/home'; // Redirect to home page
     } else {
-        // Password is invalid, send an error response
-        res.status(400).send('Invalid password. Must contain at least one number, one uppercase and lowercase letter, one symbol, and at least 6 or more characters');
+        // Sign-up failed, display error message
+        response.json().then(data => {
+            alert(data.error); // Display error message to the user
+        });
     }
+}
+
+// Form submission with fetch API
+function submitSignupForm(formData) {
+    fetch('/signup', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(handleSignupResponse)
+    .catch(error => console.error('Error:', error));
+}
+
+// Form submission event listener
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    const formData = new FormData(this); // Get form data
+    const formDataJson = JSON.stringify(Object.fromEntries(formData)); // Convert form data to JSON
+    submitSignupForm(formDataJson); // Submit form data
 });
-
-app.listen(3000, () => console.log('Server is running on port 3000'));
-
-function validateFormAndRedirect() {
-    // Validate the form...
-    // If the form is valid:
-    if (formIsValid) {
-        window.location.href = '/home';  // Redirect to home page
-        return false;  // Prevent the form from submitting normally
-    } else {
-        // If the form is not valid, let the form submit normally so the server can handle the validation error
-        return true;
-    }
-}
-
-
-    // Redirect to signup page (you can implement this based on your backend logic)
-    // Example: window.location.href = '/signup';
-    return true;
-}
