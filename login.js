@@ -1,4 +1,3 @@
-// login.js
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -15,7 +14,6 @@ const userData = [
     {
         email: "user3@example.com",
         password:"$2b$10$cJGoDLlFhSHuIF4tJ5fln.TXfNDkY4tHpR3WUdqGp0/W6I8kgat2m" // hashed password for "password3"
-
     }
     // Add more user data as needed
 ];
@@ -56,7 +54,7 @@ async function validateForm() {
         if (match) {
             console.log("Login successful!"); // Add console log
             alert("Login successful!"); // You can redirect to a dashboard page or perform other actions here
-            window.Location.href = "Home.html"; // Replace "Home.html" with the actual URL of your home page
+            window.location.href = "Home.html"; // Replace "Home.html" with the actual URL of your home page
 
             return true; // Return true after redirecting
         }
@@ -66,13 +64,11 @@ async function validateForm() {
     const confirmSignUp = confirm("You don't have an account. Would you like to sign up?");
     if (confirmSignUp) {
         // Redirect the user to the signup page
-        window.Location.href = "Signup.html"; // Replace "Signup.html" with the actual URL of your signup page
-
+        window.location.href = "Signup.html"; // Replace "Signup.html" with the actual URL of your signup page
 
         return false; // Prevent form submission
     }
 }
-
 
 // Function to toggle password visibility
 function togglePasswordVisibility() {

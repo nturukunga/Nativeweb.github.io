@@ -15,6 +15,13 @@
       {
         "list": "off"
       }
+    ],
+    "meta-viewport": "off",
+    "axe/time-and-media": [
+      "default",
+      {
+        "meta-refresh": "off"
+      }
     ]
   }
 }
