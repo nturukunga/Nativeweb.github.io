@@ -67,14 +67,16 @@ footer {
     padding: 20px;
     text-align: center;
 }
-/* settings.css */
 
 /* Define styles for light theme */
 .light-theme {
-    /* Add styles for light theme here */
+    background-color: #ffffff;
+    color: #333333;
 }
 
 /* Define styles for dark theme */
 .dark-theme {
-    /* Add styles for dark theme here */
+    background-color: #333333;
+    color: #ffffff;
 }
+
