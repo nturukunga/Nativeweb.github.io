@@ -14,7 +14,7 @@ This repository contains the source code for the NAtIVe 254 website. The website
 
 ## Usage
 
-To view the website, simply click on the following link: [NAtIVe 254 Website](https://your-website-url-here.com)
+To view the website, simply click on the following link: [NAtIVe 254 Website](https://nturukunga.github.io/)
 
 ## Contributing
 
