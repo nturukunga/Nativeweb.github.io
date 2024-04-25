@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const dropdownMenu = document.querySelector(".dropdown-menu");
         dropdownMenu.classList.toggle("show");
     });
+    // Function to handle log out
+function logout() {
+    // Clear any user authentication tokens or session data (if applicable)
+    
+    // Redirect the user to the sign-up page
+    window.location.href = 'Signup.html';
+}
+
+// Add event listener to the log out button
+document.getElementById('logout-button').addEventListener('click', logout);
+
 
     // Add event listener to document to close dropdown when clicking outside
     document.addEventListener("click", function(event) {

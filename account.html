@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Account</h1>
+    </header>
+    <main>
+        <section id="profile">
+            <h2>Profile Information</h2>
+            <!-- Form to display and edit profile information -->
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="profile-picture">Profile Picture:</label>
+                <input type="file" id="profile-picture" name="profile-picture">
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+
+        <section id="change-password">
+            <h2>Change Password</h2>
+            <!-- Form to change password -->
+            <form>
+                <label for="current-password">Current Password:</label>
+                <input type="password" id="current-password" name="current-password" required>
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <label for="confirm-password">Confirm New Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit">Change Password</button>
+            </form>
+        </section>
+
+        <!-- Add more sections for subscription status, payment methods, account settings, etc. -->
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Native254. All rights reserved.</p>
+    </footer>
+    <script src="account.js"></script>
+</body>
+</html>
