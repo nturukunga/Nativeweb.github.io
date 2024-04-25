@@ -100,3 +100,15 @@ window.addEventListener('load', function() {
         document.getElementById('language-select').value = savedLanguage;
     }
 });
+// Select the theme selector dropdown
+const themeSelect = document.getElementById('theme-select');
+
+// Add event listener for theme change
+themeSelect.addEventListener('change', function() {
+    // Get the selected theme value
+    const selectedTheme = themeSelect.value;
+
+    // Update the class attribute of the body element
+    document.body.className = selectedTheme + '-theme';
+});
+
