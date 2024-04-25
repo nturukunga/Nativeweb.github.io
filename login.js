@@ -1,5 +1,4 @@
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+// login.js
 
 // Dummy user data (replace this with your actual user data or backend logic)
 const userData = [
@@ -27,47 +26,32 @@ document.querySelector('input[name="password"]').placeholder = "Password";
  * 
  * @returns {boolean} True if the form validation passes and a user is found, false otherwise.
  */
-async function validateForm() {
-    console.log("Form validation started."); // Add console log
-    const emailInput = document.querySelector('input[name="email"]');
-    const passwordInput = document.querySelector('input[name="password"]');
-    const email = emailInput.value;
-    const password = passwordInput.value;
+function validateForm() {
+    const email = document.querySelector('input[name="email"]').value;
+    const password = document.querySelector('input[name="password"]').value;
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
+    // Validate email and password
+    if (!email || !password) {
+        alert('Please enter both email and password.');
         return false;
     }
 
-    // Password length validation
-    if (password.length < 6) {
-        alert('Password must be at least 6 characters long.');
-        return false;
-    }
-
-    // If form validation passes, proceed with login
+    // Simulate server-side validation
     const user = userData.find(user => user.email === email);
-    if (user) {
-        const match = await bcrypt.compare(password, user.password);
-        if (match) {
-            console.log("Login successful!"); // Add console log
-            alert("Login successful!"); // You can redirect to a dashboard page or perform other actions here
-            window.location.href = "Home.html"; // Replace "Home.html" with the actual URL of your home page
-
-            return true; // Return true after redirecting
-        }
+    if (!user) {
+        alert("User not found. Please sign up.");
+        return false;
     }
 
-    // If user is not found, prompt them to sign up
-    const confirmSignUp = confirm("You don't have an account. Would you like to sign up?");
-    if (confirmSignUp) {
-        // Redirect the user to the signup page
-        window.location.href = "Signup.html"; // Replace "Signup.html" with the actual URL of your signup page
-
-        return false; // Prevent form submission
+    // Check password match
+    if (password !== "password") {
+        alert("Incorrect password.");
+        return false;
     }
+
+    // Redirect to home page
+    window.location.href = "Home.html";
+    return true;
 }
 
 // Function to toggle password visibility
