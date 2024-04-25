@@ -94,3 +94,14 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     const formDataJson = JSON.stringify(Object.fromEntries(formData)); // Convert form data to JSON
     submitSignupForm(formDataJson); // Submit form data
 });
+
+// Function to update displayed initials
+function updateInitials(username) {
+    const initials = username.split(' ').map(word => word.charAt(0).toUpperCase()).join('');
+    document.querySelector('.initials').textContent = initials;
+}
+
+// Example usage after user signs up (replace "username" with the actual username)
+const username = "John Doe"; // Example username
+updateInitials(username); // Update displayed initials
+

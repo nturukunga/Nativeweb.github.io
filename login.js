@@ -6,11 +6,16 @@ const saltRounds = 10;
 const userData = [
     {
         email: "howellnesh@gmail.com",
-        password: await bcrypt.hash("@Qwa3247", saltRounds)
+        password: "$2b$10$5s2xEzihKYHfkg4AsaK4EurPAoxR0mGk5mlVbTKwbFSC2Z4GR1blS" // hashed password for "@Qwa3247"
     },
     {
         email: "user2@example.com",
-        password: await bcrypt.hash("password2", saltRounds)
+        password: "$2b$10$yHQiDLlFhSHuIF4tJ5fln.TXfNDkY4tHpR3WUdqGp0/W6I8kgat2m" // hashed password for "password2"
+    },
+    {
+        email: "user3@example.com",
+        password:"$2b$10$cJGoDLlFhSHuIF4tJ5fln.TXfNDkY4tHpR3WUdqGp0/W6I8kgat2m" // hashed password for "password3"
+
     }
     // Add more user data as needed
 ];
@@ -25,6 +30,7 @@ document.querySelector('input[name="password"]').placeholder = "Password";
  * @returns {boolean} True if the form validation passes and a user is found, false otherwise.
  */
 async function validateForm() {
+    console.log("Form validation started."); // Add console log
     const emailInput = document.querySelector('input[name="email"]');
     const passwordInput = document.querySelector('input[name="password"]');
     const email = emailInput.value;
@@ -48,9 +54,11 @@ async function validateForm() {
     if (user) {
         const match = await bcrypt.compare(password, user.password);
         if (match) {
+            console.log("Login successful!"); // Add console log
             alert("Login successful!"); // You can redirect to a dashboard page or perform other actions here
-            window.location.assign("Home.html"); // Redirect to the home page
-            return true;
+            window.Location.href = "Home.html"; // Replace "Home.html" with the actual URL of your home page
+
+            return true; // Return true after redirecting
         }
     }
 
@@ -58,10 +66,13 @@ async function validateForm() {
     const confirmSignUp = confirm("You don't have an account. Would you like to sign up?");
     if (confirmSignUp) {
         // Redirect the user to the signup page
-        window.location.href = "Signup.html"; // Replace "Signup.html" with the actual URL of your signup page
+        window.Location.href = "Signup.html"; // Replace "Signup.html" with the actual URL of your signup page
+
+
         return false; // Prevent form submission
     }
 }
+
 
 // Function to toggle password visibility
 function togglePasswordVisibility() {

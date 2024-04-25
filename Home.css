@@ -3,8 +3,10 @@ h4 {
     color: white; /* Ensures text is visible on the dark background */
     padding: 10px; /* Optional: Add some padding for better readability */
 }
+
 body {
-    background-color: lightpink;
+    color: #E8E6E3;
+    background-color: #262A2B;
     font-family: Arial, sans-serif;
 }
 .container {
@@ -16,7 +18,8 @@ body {
 .box {
     width: 300px;
     height: 250px;
-    background-color: white;
+    color: #D8D4EF;
+    background-color: #131516;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -42,6 +45,8 @@ button {
     margin: 95px; /* Adjust the space between buttons */
     cursor: pointer;
     margin-top: 5px;
+    color: #FFFFFF;
+    background-color: #6B6B6B;
 }
 
 .paragraph {
@@ -58,7 +63,7 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: lightpink;
+    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +75,7 @@ button {
     top: 60px;
     right: 10px;
     display: none;
-    background-color: lightpink;
+    background-color: #333;
     border: 1px solid black;
     padding: 10px;
 }
@@ -78,4 +83,39 @@ button {
 .dropdown-item {
     cursor: pointer;
     margin-bottom: 5px;
+}
+
+.box img {
+    width: 100%; /* Ensure the image fills the entire width of the box */
+    height: 100%; /* Ensure the image fills the entire height of the box */
+    object-fit: cover; /* Cover the box completely without distortion */
+}
+
+.insert {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 700px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
 }

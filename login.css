@@ -4,10 +4,11 @@ h4 {
     background-color: black;
     color: white; /* Ensures text is visible on the dark background */
     padding: 10px; /* Optional: Add some padding for better readability */
+    margin: 20px 0px;
 }
 
 body {
-    background-color: lightpink;
+    background-color: #262A2B;
     font-family: Arial, sans-serif;
 }
 
@@ -28,7 +29,7 @@ input[type="password"] {
 
 button {
     background-color: black;
-    color: white;
+    color: #FFFFFF;
     border: none;
     padding: 10px 20px;
     cursor: pointer;

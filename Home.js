@@ -34,6 +34,25 @@ document.addEventListener("DOMContentLoaded", function() {
 const initials = document.querySelector('.initials');
 const dropdown = document.getElementById('dropdown');
 
-initials.addEventListener('click', function() {
-    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-});
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdown");
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+    } else {
+        dropdown.style.display = "block";
+    }
+}
+
+function navigateTo(url) {
+    window.location.href = url;
+}
+
+function changeTheme() {
+    // Implement theme change logic here
+    alert("Theme change functionality will be implemented here.");
+}
+
+function logout() {
+    // Implement logout logic here
+    alert("Logout functionality will be implemented here.");
+}                                 

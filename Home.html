@@ -8,34 +8,39 @@
 </head>
 <body>
     <h4>NAtIVe 254</h4>
-    <div class="initials">AB</div>
+    <div class="initials" onclick="toggleDropdown()"></div>
     <div class="dropdown" id="dropdown">
-        <div class="dropdown item">Account</div>
-        <div class="dropdown item">Settings</div>
-        <div class="dropdown item">Theme</div>
-        <div class="dropdown item">Log Out</div>
+        <div class="dropdown-item" onclick="navigateTo('account.html')">Account</div>
+        <div class="dropdown-item" onclick="navigateTo('settings.html')">Settings</div>
+        <div class="dropdown-item" onclick="changeTheme()">Theme</div>
+        <div class="dropdown-item" onclick="logout()">Log Out</div>
     </div>
     <br>
       <div class="paragraph">
         <p>
-            Welcome to  the NAtIVE 254 website!.
-            <br>
-             NAtIVE 254  is a group of developers who offer
-            solutions for various problems in programming and web development. We are passionate about learning new skills 
-            and working with like minded  individuals in order to create innovative projects that will benefit society as a whole.
+            <h1>Welcome to  the NAtIVE 254 website!.</h1>
         </p>
-    </div>
+        </div>
+            <div class="insert">
+            <div class="logo"><img src="E:\Documents\Nativeweb.github.io\img\wide logo.png" alt="Intro logo"></div>  
+        </div>         
     <br>
     <div class="container">
-        <div class="box" id="box1">Container 1</div>
-        <div class="box" id="box2">Container 2</div>
-        <div class="box" id="box3">Container 3</div>
+        <div class="box" id="box1"><img src="E:\Documents\Nativeweb.github.io\img\ABOUT US.png"></div>
+        <div class="box" id="box2"><img src="E:\Documents\Nativeweb.github.io\img\services.png"></div>
+        <div class="box" id="box3"><img src="E:\Documents\Nativeweb.github.io\img\contact us.png"></div>
     </div>
     <div class="buttons">
-        <button href="About.html">About</button>
-        <button href="Services.html">Services</button>
-        <button href="Contact.html">Contact Us</button>
+        <button onclick="navigateTo('About.html')">About</button>
+        <button onclick="navigateTo('Services.html')">Services</button>
+        <button onclick="navigateTo('Contact.html')">Contact Us</button>
     </div>
+
+    <footer class="footer">
+        <p>&copy; Native254 2024</p>
+    </footer>
+
     <script src="Home.js"></script>
+
 </body>
 </html>
