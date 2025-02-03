@@ -70,21 +70,6 @@ button {
     cursor: pointer;
 }
 
-.dropdown {
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    display: none;
-    background-color: #333;
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.dropdown-item {
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
 .box img {
     width: 100%; /* Ensure the image fills the entire width of the box */
     height: 100%; /* Ensure the image fills the entire height of the box */

@@ -1,17 +1,15 @@
 // contact.js
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Get form data
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission (page reload)
+    
+    // Create an object to hold the form data
     const formData = new FormData(this);
-
-    // Convert form data to JSON
     const jsonData = {};
     formData.forEach((value, key) => {
         jsonData[key] = value;
     });
-
-    // Send form data to server using fetch API
+    
+    // Send the form data to your server
     fetch('/submit-form', {
         method: 'POST',
         headers: {
@@ -22,8 +20,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     .then(response => {
         if (response.ok) {
             alert('Message sent successfully!');
-            // Optionally, reset the form
-            this.reset();
+            this.reset(); // Optionally reset the form
         } else {
             alert('Failed to send message. Please try again later.');
         }
