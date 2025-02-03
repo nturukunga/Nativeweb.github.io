@@ -93,3 +93,14 @@ footer {
     text-align: center;
     margin-top: 20px;
 }
+
+button {
+    padding: 10px 25px;
+    margin: 100px; /* Adjust the space between buttons */
+    cursor: pointer;
+    margin-top: 5px;
+    color: #FFFFFF;
+    background-color: #6B6B6B;
+    align-items: center;
+
+}
