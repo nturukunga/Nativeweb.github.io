@@ -1,13 +1,22 @@
 h4 {
     background-color: black;
-    color: white; /* Ensures text is visible on the dark background */
-    padding: 10px; /* Optional: Add some padding for better readability */
+    color: white; 
+    padding: 10px; 
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 body {
     color: #E8E6E3;
     background-color: #262A2B;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 .container {
     display: flex;
